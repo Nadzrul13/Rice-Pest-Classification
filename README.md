@@ -203,3 +203,42 @@ Seluruh eksperimen dilakukan menggunakan konfigurasi pelatihan berikut:
 | Early Stopping | Patience = 5 |
 | Input Size | 380×380 (EfficientNet-B4), 299×299 (Inception-V3) |
 | Pretrained Weights | ImageNet |
+
+---
+
+## 📊 Experimental Results
+
+Seluruh skenario pelatihan dievaluasi menggunakan metrik **Accuracy**, **Precision**, **Recall**, dan **F1-score** untuk membandingkan performa **EfficientNet-B4** dan **Inception-V3**.
+
+Hasil eksperimen menunjukkan bahwa peningkatan strategi *fine-tuning* secara umum memberikan peningkatan performa pada kedua arsitektur dibandingkan pendekatan *Feature Extraction*. Dari enam skenario yang diuji, **Full Fine-Tuning tanpa augmentasi** menghasilkan performa terbaik pada kedua model.
+
+- 🏆 **EfficientNet-B4** mencapai performa terbaik pada skenario **Full Fine-Tuning tanpa augmentasi**, dengan:
+  - Accuracy : **92.36%**
+  - Precision : **91.30%**
+  - Recall : **90.55%**
+  - F1-score : **90.75%**
+
+- 🏆 **Inception-V3** juga memperoleh performa terbaik pada skenario **Full Fine-Tuning tanpa augmentasi**, dengan:
+  - Accuracy : **89.19%**
+  - Precision : **88.84%**
+  - Recall : **87.97%**
+  - F1-score : **88.19%**
+
+Secara keseluruhan, **EfficientNet-B4** memberikan performa yang lebih baik dibandingkan **Inception-V3** pada hampir seluruh skenario pengujian, menunjukkan kemampuan yang lebih baik dalam mengekstraksi fitur diskriminatif untuk klasifikasi hama tanaman padi.
+
+### Performance Comparison
+
+| Training Scenario | Model | Accuracy | Precision | Recall | F1-Score |
+|-------------------|-----------------|:-------:|:--------:|:------:|:-------:|
+| **Feature Extraction + Augmentation** | Inception-V3 | 74.49% | 72.30% | 73.98% | 72.24% |
+| | EfficientNet-B4 | 81.84% | 79.87% | 79.78% | 79.53% |
+| **Partial Fine-Tuning + Augmentation** | Inception-V3 | 87.60% | 85.81% | 86.84% | 86.16% |
+| | EfficientNet-B4 | 90.34% | 88.33% | 88.50% | 88.29% |
+| **Full Fine-Tuning + Augmentation** | Inception-V3 | 88.32% | 87.63% | 86.94% | 87.06% |
+| | EfficientNet-B4 | 92.21% | 92.00% | 91.41% | 91.61% |
+| **Feature Extraction + Without Augmentation** | Inception-V3 | 80.54% | 77.97% | 79.65% | 78.01% |
+| | EfficientNet-B4 | 83.86% | 81.73% | 81.60% | 81.41% |
+| **Partial Fine-Tuning + Without Augmentation** | Inception-V3 | 87.46% | 85.77% | 85.51% | 85.58% |
+| | EfficientNet-B4 | 88.61% | 86.96% | 87.39% | 86.90% |
+| **🏆 Full Fine-Tuning + Without Augmentation** | **Inception-V3** | **89.19%** | **88.84%** | **87.97%** | **88.19%** |
+| | **EfficientNet-B4** | **92.36%** | **91.30%** | **90.55%** | **90.75%** |
