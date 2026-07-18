@@ -158,6 +158,20 @@ graph TD
 
     linkStyle default stroke:#64748b,stroke-width:1px
 ```
+---
+
+## 🧪 Skenario Pengujian
+
+Penelitian ini mengevaluasi dua arsitektur CNN, **EfficientNet-B4** dan **Inception-V3**, menggunakan enam skenario eksperimen yang merupakan kombinasi dari tiga strategi *transfer learning* dan dua konfigurasi pelatihan (dengan dan tanpa augmentasi).
+
+| Scenario | Fine-Tuning Strategy | Data Augmentation | Description |
+|----------|----------------------|-------------------|-------------|
+| Scenario 1 | Feature Extraction | ❌ Without | Seluruh backbone dibekukan, hanya classifier yang dilatih. |
+| Scenario 2 | Feature Extraction | ✅ With | Backbone dibekukan, classifier dilatih menggunakan data hasil augmentasi. |
+| Scenario 3 | Partial Fine-Tuning | ❌ Without | Sebagian layer akhir backbone dan classifier dilatih tanpa augmentasi. |
+| Scenario 4 | Partial Fine-Tuning | ✅ With | Sebagian layer akhir backbone dan classifier dilatih menggunakan augmentasi. |
+| Scenario 5 | Full Fine-Tuning | ❌ Without | Seluruh parameter model dilatih tanpa augmentasi. |
+| Scenario 6 | Full Fine-Tuning | ✅ With | Seluruh parameter model dilatih menggunakan data hasil augmentasi. |
 
 ---
 
