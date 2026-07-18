@@ -13,3 +13,16 @@ Eksperimen dilakukan dengan menerapkan tiga skenario fine tuning, yaitu **Featur
 ![Task](https://img.shields.io/badge/Task-Rice_Pest_Classification-success?style=for-the-badge)
 
 </p>
+
+<p align="center">
+
+![TorchVision](https://img.shields.io/badge/TorchVision-0.26-orange?style=flat-square)
+![NumPy](https://img.shields.io/badge/NumPy-2.0.2-013243?style=flat-square&logo=numpy)
+![Pandas](https://img.shields.io/badge/Pandas-2.2.2-150458?style=flat-square&logo=pandas)
+![OpenCV](https://img.shields.io/badge/OpenCV-Image_Processing-5C3EE8?style=flat-square&logo=opencv)
+![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-Evaluation-F7931E?style=flat-square&logo=scikitlearn)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-11557C?style=flat-square)
+![Seaborn](https://img.shields.io/badge/Seaborn-Visualization-4C72B0?style=flat-square)
+![GradCAM++](https://img.shields.io/badge/XAI-GradCAM++-purple?style=flat-square)
+
+</p>
