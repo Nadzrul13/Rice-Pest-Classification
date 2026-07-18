@@ -29,3 +29,35 @@ Eksperimen dilakukan dengan menerapkan tiga skenario fine tuning, yaitu **Featur
 ![GradCAM++](https://img.shields.io/badge/XAI-GradCAM++-purple?style=flat-square)
 
 </p>
+
+---
+
+## 📂 Dataset
+
+Penelitian ini menggunakan **RP11 (Rice Pest 11)**, yaitu dataset yang diperkenalkan oleh **Ding et al. (2025)** sebagai subset dari **IP102** yang berfokus pada citra **hama padi fase dewasa (adult stage)**. Dataset ini dipublikasikan melalui Kaggle dan dirancang untuk mendukung penelitian klasifikasi hama tanaman padi.
+
+**📌 Dataset Information**
+
+- **Dataset Name:** RP11 (Subset of IP102)
+- **Source:** Ding et al. (2025)
+- **Platform:** Kaggle
+- **Dataset Link:** https://www.kaggle.com/datasets/dingbiao11/rp11-a-dataset-focus-on-adult-rice-pest
+- **Total Images:** **4,559**
+- **Number of Classes:** **11 Rice Pest Categories**
+
+### 📊 Class Distribution
+
+| No | Pest Category | Description | Images |
+|:--:|---------------|-------------|-------:|
+| 1 | Curculionidae | Small beetles that damage rice leaves and roots during the early growth stage. | 824 |
+| 2 | Delphacidae | Rice planthoppers that suck plant sap, causing yellowing and drying of rice plants. | 729 |
+| 3 | Cicadellidae | Leafhoppers that feed on plant sap and may transmit plant diseases. | 636 |
+| 4 | Phlaeothripidae | Small sap-sucking insects that inhibit rice plant growth. | 290 |
+| 5 | Cecidomyiidae | Gall midges that attack the growing point of rice plants, preventing panicle formation. | 373 |
+| 6 | Hesperiidae | Leaf-feeding caterpillars that consume rice foliage. | 393 |
+| 7 | Crambidae | Stem borers and leaf feeders that damage rice stems and leaves. | 461 |
+| 8 | Chloropidae | Small flies that attack young rice stems and inhibit plant growth. | 153 |
+| 9 | Ephydridae | Leaf-feeding pests that cause spots and damage on rice leaves. | 167 |
+| 10 | Noctuidae | Caterpillars that damage rice leaves and stems, reducing crop yield. | 206 |
+| 11 | Thripidae | Thrips that cause leaf yellowing and stunt rice plant growth. | 330 |
+| **Total** | **11 Classes** |  | **4,559** |
