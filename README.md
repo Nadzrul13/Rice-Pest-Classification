@@ -66,94 +66,68 @@ Penelitian ini menggunakan **RP11 (Rice Pest 11)**, yaitu dataset yang diperkena
 
 ## ⚙️ Alur Penelitian
 
-Penelitian ini mengikuti alur kerja (End-to-End Deep Learning Pipeline) yang sistematis untuk memastikan proses persiapan data, pelatihan model, evaluasi, dan interpretasi hasil dilakukan secara terstruktur dan optimal.
+Penelitian ini menerapkan alur kerja (*End-to-End Deep Learning Pipeline*) yang sistematis untuk memastikan setiap tahapan, mulai dari persiapan data, pelatihan model, evaluasi kinerja, hingga interpretasi hasil menggunakan *Explainable Artificial Intelligence (XAI)*, dilakukan secara terstruktur.
 
 ```mermaid
 graph TD
 
-    %% Dataset
-    A([RP11 Dataset])
+%% ================= DATASET =================
+A([RP11 Dataset])
+A --> B[Data Splitting<br/>70% Train • 15% Validation • 15% Test]
 
-    %% Data Splitting
-    B[Data Splitting<br/>70% Train • 15% Validation • 15% Test]
+%% ================= DATA SPLIT =================
+B --> C1[Training Set]
+B --> C2[Validation Set]
+B --> C3[Test Set]
 
-    %% Branch
-    C1[Training Set]
-    C2[Validation Set]
-    C3[Test Set]
+%% ================= PREPROCESSING =================
+C1 --> D1[Preprocessing]
+C2 --> D2[Preprocessing]
 
-    %% Preprocessing
-    D1[Preprocessing]
-    D2[Preprocessing]
+%% ================= AUGMENTATION =================
+D1 --> E[Data Augmentation<br/>(Optional)]
 
-    %% Augmentation
-    E[Data Augmentation<br/>Optional]
+%% ================= TRAINING =================
+E --> F[Training Scenarios]
+D2 --> F
 
-    %% Training
-    F{Training Scenarios}
+%% ================= FINE-TUNING =================
+F --> G1[Feature Extraction]
+F --> G2[Partial Fine-Tuning]
+F --> G3[Full Fine-Tuning]
 
-    G1[Feature Extraction]
-    G2[Partial Fine-Tuning]
-    G3[Full Fine-Tuning]
+%% ================= EVALUATION =================
+G1 --> H[Model Evaluation]
+G2 --> H
+G3 --> H
+C3 --> H
 
-    %% Evaluation
-    H[Model Evaluation]
+%% ================= RESULT =================
+H --> I[Performance Results]
+I --> J[Error Analysis<br/>(GradCAM++)]
 
-    %% Result
-    I[Performance Results]
+%% ================= STYLE =================
+style A fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#fff
+style B fill:#1e293b,stroke:#fbbf24,stroke-width:2px,color:#fff
 
-    %% Error Analysis
-    J[Error Analysis<br/>GradCAM++]
+style C1 fill:#0f172a,stroke:#64748b,color:#fff
+style C2 fill:#0f172a,stroke:#64748b,color:#fff
+style C3 fill:#0f172a,stroke:#64748b,color:#fff
 
-    %% Flow
-    A --> B
+style D1 fill:#1e293b,stroke:#94a3b8,color:#fff
+style D2 fill:#1e293b,stroke:#94a3b8,color:#fff
 
-    B --> C1
-    B --> C2
-    B --> C3
+style E fill:#3f3f46,stroke:#f97316,color:#fff
 
-    C1 --> D1
-    C2 --> D2
+style F fill:#1e293b,stroke:#8b5cf6,stroke-width:2px,color:#fff
 
-    D1 --> E
-    D2 --> F
-    E --> F
+style G1 fill:#0f172a,stroke:#a855f7,color:#fff
+style G2 fill:#0f172a,stroke:#a855f7,color:#fff
+style G3 fill:#0f172a,stroke:#a855f7,color:#fff
 
-    F --> G1
-    F --> G2
-    F --> G3
+style H fill:#1e293b,stroke:#22c55e,color:#fff
+style I fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff
+style J fill:#7f1d1d,stroke:#ef4444,stroke-width:2px,color:#fff
 
-    G1 --> H
-    G2 --> H
-    G3 --> H
-
-    C3 --> H
-
-    H --> I
-    I --> J
-
-    %% Styling
-    style A fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#fff
-    style B fill:#1e293b,stroke:#fbbf24,stroke-width:2px,color:#fff
-
-    style C1 fill:#0f172a,stroke:#64748b,color:#fff
-    style C2 fill:#0f172a,stroke:#64748b,color:#fff
-    style C3 fill:#0f172a,stroke:#64748b,color:#fff
-
-    style D1 fill:#1e293b,stroke:#94a3b8,color:#fff
-    style D2 fill:#1e293b,stroke:#94a3b8,color:#fff
-
-    style E fill:#3f3f46,stroke:#f97316,color:#fff
-
-    style F fill:#1e293b,stroke:#8b5cf6,stroke-width:2px,color:#fff
-
-    style G1 fill:#0f172a,stroke:#a855f7,color:#fff
-    style G2 fill:#0f172a,stroke:#a855f7,color:#fff
-    style G3 fill:#0f172a,stroke:#a855f7,color:#fff
-
-    style H fill:#1e293b,stroke:#22c55e,color:#fff
-    style I fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff
-    style J fill:#7f1d1d,stroke:#ef4444,stroke-width:2px,color:#fff
-
-    linkStyle default stroke:#64748b,stroke-width:1px
+linkStyle default stroke:#64748b,stroke-width:1.5px
 ```
