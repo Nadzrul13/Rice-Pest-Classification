@@ -61,3 +61,99 @@ Penelitian ini menggunakan **RP11 (Rice Pest 11)**, yaitu dataset yang diperkena
 | 10 | Noctuidae | Caterpillars that damage rice leaves and stems, reducing crop yield. | 206 |
 | 11 | Thripidae | Thrips that cause leaf yellowing and stunt rice plant growth. | 330 |
 | **Total** | **11 Classes** |  | **4,559** |
+
+---
+
+## ⚙️ Alur Penelitian
+
+Penelitian ini mengikuti alur kerja (End-to-End Deep Learning Pipeline) yang sistematis untuk memastikan proses persiapan data, pelatihan model, evaluasi, dan interpretasi hasil dilakukan secara terstruktur dan optimal.
+
+```mermaid
+graph TD
+
+    %% Dataset
+    A([RP11 Dataset])
+
+    %% Data Splitting
+    B[Data Splitting<br/>70% Train • 15% Validation • 15% Test]
+
+    %% Branch
+    C1[Training Set]
+    C2[Validation Set]
+    C3[Test Set]
+
+    %% Preprocessing
+    D1[Preprocessing]
+    D2[Preprocessing]
+
+    %% Augmentation
+    E[Data Augmentation<br/>Optional]
+
+    %% Training
+    F{Training Scenarios}
+
+    G1[Feature Extraction]
+    G2[Partial Fine-Tuning]
+    G3[Full Fine-Tuning]
+
+    %% Evaluation
+    H[Model Evaluation]
+
+    %% Result
+    I[Performance Results]
+
+    %% Error Analysis
+    J[Error Analysis<br/>GradCAM++]
+
+    %% Flow
+    A --> B
+
+    B --> C1
+    B --> C2
+    B --> C3
+
+    C1 --> D1
+    C2 --> D2
+
+    D1 --> E
+    D2 --> F
+    E --> F
+
+    F --> G1
+    F --> G2
+    F --> G3
+
+    G1 --> H
+    G2 --> H
+    G3 --> H
+
+    C3 --> H
+
+    H --> I
+    I --> J
+
+    %% Styling
+    style A fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#fff
+    style B fill:#1e293b,stroke:#fbbf24,stroke-width:2px,color:#fff
+
+    style C1 fill:#0f172a,stroke:#64748b,color:#fff
+    style C2 fill:#0f172a,stroke:#64748b,color:#fff
+    style C3 fill:#0f172a,stroke:#64748b,color:#fff
+
+    style D1 fill:#1e293b,stroke:#94a3b8,color:#fff
+    style D2 fill:#1e293b,stroke:#94a3b8,color:#fff
+
+    style E fill:#3f3f46,stroke:#f97316,color:#fff
+
+    style F fill:#1e293b,stroke:#8b5cf6,stroke-width:2px,color:#fff
+
+    style G1 fill:#0f172a,stroke:#a855f7,color:#fff
+    style G2 fill:#0f172a,stroke:#a855f7,color:#fff
+    style G3 fill:#0f172a,stroke:#a855f7,color:#fff
+
+    style H fill:#1e293b,stroke:#22c55e,color:#fff
+    style I fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff
+    style J fill:#7f1d1d,stroke:#ef4444,stroke-width:2px,color:#fff
+
+    linkStyle default stroke:#64748b,stroke-width:1px
+```
