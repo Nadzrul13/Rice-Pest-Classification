@@ -160,6 +160,17 @@ graph TD
 ```
 ---
 
+## 🧠 Arsitektur Model
+
+Penelitian ini membandingkan dua arsitektur *Convolutional Neural Network (CNN)* yang telah dipra-latih (*pre-trained*) pada dataset **ImageNet** dan diimplementasikan menggunakan pendekatan *transfer learning*.
+
+| Architecture | Description | Input Size |
+|-------------|-------------|-----------:|
+| **EfficientNet-B4** | CNN berbasis *compound scaling* yang menyeimbangkan kedalaman (*depth*), lebar (*width*), dan resolusi citra (*resolution*) untuk memperoleh performa tinggi dengan jumlah parameter yang efisien. | **380 × 380** |
+| **Inception-V3** | CNN yang menggunakan modul *Inception* untuk mengekstraksi fitur multi-skala secara efisien dengan kompleksitas komputasi yang lebih rendah. | **299 × 299** |
+
+---
+
 ## 🧪 Skenario Pengujian
 
 Penelitian ini mengevaluasi dua arsitektur CNN, **EfficientNet-B4** dan **Inception-V3**, menggunakan enam skenario eksperimen yang merupakan kombinasi dari tiga strategi *transfer learning* dan dua konfigurasi pelatihan (dengan dan tanpa augmentasi).
