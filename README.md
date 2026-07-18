@@ -68,66 +68,93 @@ Penelitian ini menggunakan **RP11 (Rice Pest 11)**, yaitu dataset yang diperkena
 
 Penelitian ini menerapkan alur kerja (*End-to-End Deep Learning Pipeline*) yang sistematis untuk memastikan setiap tahapan, mulai dari persiapan data, pelatihan model, evaluasi kinerja, hingga interpretasi hasil menggunakan *Explainable Artificial Intelligence (XAI)*, dilakukan secara terstruktur.
 
+
 ```mermaid
 graph TD
 
-%% ================= DATASET =================
-A([RP11 Dataset])
-A --> B[Data Splitting<br/>70% Train • 15% Validation • 15% Test]
+    %% Dataset
+    A([RP11 Dataset])
 
-%% ================= DATA SPLIT =================
-B --> C1[Training Set]
-B --> C2[Validation Set]
-B --> C3[Test Set]
+    %% Data Splitting
+    B[Data Splitting<br/>70% Train • 15% Validation • 15% Test]
 
-%% ================= PREPROCESSING =================
-C1 --> D1[Preprocessing]
-C2 --> D2[Preprocessing]
+    %% Branch
+    C1[Training Set]
+    C2[Validation Set]
+    C3[Test Set]
 
-%% ================= AUGMENTATION =================
-D1 --> E[Data Augmentation<br/>(Optional)]
+    %% Preprocessing
+    D1[Preprocessing]
+    D2[Preprocessing]
 
-%% ================= TRAINING =================
-E --> F[Training Scenarios]
-D2 --> F
+    %% Augmentation
+    E[Data Augmentation<br/>Optional]
 
-%% ================= FINE-TUNING =================
-F --> G1[Feature Extraction]
-F --> G2[Partial Fine-Tuning]
-F --> G3[Full Fine-Tuning]
+    %% Training
+    F{Training Scenarios}
 
-%% ================= EVALUATION =================
-G1 --> H[Model Evaluation]
-G2 --> H
-G3 --> H
-C3 --> H
+    G1[Feature Extraction]
+    G2[Partial Fine-Tuning]
+    G3[Full Fine-Tuning]
 
-%% ================= RESULT =================
-H --> I[Performance Results]
-I --> J[Error Analysis<br/>(GradCAM++)]
+    %% Evaluation
+    H[Model Evaluation]
 
-%% ================= STYLE =================
-style A fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#fff
-style B fill:#1e293b,stroke:#fbbf24,stroke-width:2px,color:#fff
+    %% Result
+    I[Performance Results]
 
-style C1 fill:#0f172a,stroke:#64748b,color:#fff
-style C2 fill:#0f172a,stroke:#64748b,color:#fff
-style C3 fill:#0f172a,stroke:#64748b,color:#fff
+    %% Error Analysis
+    J[Error Analysis<br/>GradCAM++]
 
-style D1 fill:#1e293b,stroke:#94a3b8,color:#fff
-style D2 fill:#1e293b,stroke:#94a3b8,color:#fff
+    %% Flow
+    A --> B
 
-style E fill:#3f3f46,stroke:#f97316,color:#fff
+    B --> C1
+    B --> C2
+    B --> C3
 
-style F fill:#1e293b,stroke:#8b5cf6,stroke-width:2px,color:#fff
+    C1 --> D1
+    C2 --> D2
 
-style G1 fill:#0f172a,stroke:#a855f7,color:#fff
-style G2 fill:#0f172a,stroke:#a855f7,color:#fff
-style G3 fill:#0f172a,stroke:#a855f7,color:#fff
+    D1 --> E
+    D2 --> F
+    E --> F
 
-style H fill:#1e293b,stroke:#22c55e,color:#fff
-style I fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff
-style J fill:#7f1d1d,stroke:#ef4444,stroke-width:2px,color:#fff
+    F --> G1
+    F --> G2
+    F --> G3
 
-linkStyle default stroke:#64748b,stroke-width:1.5px
+    G1 --> H
+    G2 --> H
+    G3 --> H
+
+    C3 --> H
+
+    H --> I
+    I --> J
+
+    %% Styling
+    style A fill:#1e293b,stroke:#38bdf8,stroke-width:2px,color:#fff
+    style B fill:#1e293b,stroke:#fbbf24,stroke-width:2px,color:#fff
+
+    style C1 fill:#0f172a,stroke:#64748b,color:#fff
+    style C2 fill:#0f172a,stroke:#64748b,color:#fff
+    style C3 fill:#0f172a,stroke:#64748b,color:#fff
+
+    style D1 fill:#1e293b,stroke:#94a3b8,color:#fff
+    style D2 fill:#1e293b,stroke:#94a3b8,color:#fff
+
+    style E fill:#3f3f46,stroke:#f97316,color:#fff
+
+    style F fill:#1e293b,stroke:#8b5cf6,stroke-width:2px,color:#fff
+
+    style G1 fill:#0f172a,stroke:#a855f7,color:#fff
+    style G2 fill:#0f172a,stroke:#a855f7,color:#fff
+    style G3 fill:#0f172a,stroke:#a855f7,color:#fff
+
+    style H fill:#1e293b,stroke:#22c55e,color:#fff
+    style I fill:#064e3b,stroke:#10b981,stroke-width:2px,color:#fff
+    style J fill:#7f1d1d,stroke:#ef4444,stroke-width:2px,color:#fff
+
+    linkStyle default stroke:#64748b,stroke-width:1px
 ```
