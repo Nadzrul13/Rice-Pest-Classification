@@ -158,3 +158,23 @@ graph TD
 
     linkStyle default stroke:#64748b,stroke-width:1px
 ```
+
+---
+
+## ⚙️ Konfigurasi Parameter
+
+Seluruh eksperimen dilakukan menggunakan konfigurasi pelatihan berikut:
+
+| Parameter | Configuration |
+|-----------|---------------|
+| Framework | PyTorch |
+| Testing Scenario | Feature Extraction, Partial Fine-Tuning, Full Fine-Tuning |
+| Data Augmentation | With Augmentation & Without Augmentation |
+| Optimizer | Adam, AdamW |
+| Learning Rate | 1e-3, 1e-4 |
+| Scheduler | ReduceLROnPlateau, StepLR, CosineAnnealingLR |
+| Batch Size | 32 |
+| Loss Function | CrossEntropyLoss |
+| Early Stopping | Patience = 5 |
+| Input Size | 380×380 (EfficientNet-B4), 299×299 (Inception-V3) |
+| Pretrained Weights | ImageNet |
