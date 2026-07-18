@@ -1,0 +1,81 @@
+{
+    "Cecidomyiidae": {
+        "precision": 0.8833333333333333,
+        "recall": 0.9464285714285714,
+        "f1-score": 0.9137931034482759,
+        "support": 56.0
+    },
+    "Chloropidae": {
+        "precision": 0.8695652173913043,
+        "recall": 0.8333333333333334,
+        "f1-score": 0.851063829787234,
+        "support": 24.0
+    },
+    "Cicadellidae": {
+        "precision": 0.8709677419354839,
+        "recall": 0.84375,
+        "f1-score": 0.8571428571428571,
+        "support": 96.0
+    },
+    "Crambidae": {
+        "precision": 0.8313253012048193,
+        "recall": 0.9857142857142858,
+        "f1-score": 0.9019607843137255,
+        "support": 70.0
+    },
+    "Curculionidae": {
+        "precision": 0.9743589743589743,
+        "recall": 0.912,
+        "f1-score": 0.9421487603305785,
+        "support": 125.0
+    },
+    "Delphacidae": {
+        "precision": 0.8727272727272727,
+        "recall": 0.8727272727272727,
+        "f1-score": 0.8727272727272727,
+        "support": 110.0
+    },
+    "Ephydridae": {
+        "precision": 0.8695652173913043,
+        "recall": 0.7692307692307693,
+        "f1-score": 0.8163265306122449,
+        "support": 26.0
+    },
+    "Hesperiidae": {
+        "precision": 0.9836065573770492,
+        "recall": 1.0,
+        "f1-score": 0.9917355371900827,
+        "support": 60.0
+    },
+    "Noctuidae": {
+        "precision": 0.9642857142857143,
+        "recall": 0.84375,
+        "f1-score": 0.9,
+        "support": 32.0
+    },
+    "Phlaeothripidae": {
+        "precision": 0.7647058823529411,
+        "recall": 0.8863636363636364,
+        "f1-score": 0.8210526315789474,
+        "support": 44.0
+    },
+    "Thripidae": {
+        "precision": 0.8888888888888888,
+        "recall": 0.7843137254901961,
+        "f1-score": 0.8333333333333334,
+        "support": 51.0
+    },
+    "accuracy": 0.8919308357348703,
+    "macro avg": {
+        "precision": 0.888484554658826,
+        "recall": 0.879782872208006,
+        "f1-score": 0.8819349673149592,
+        "support": 694.0
+    },
+    "weighted avg": {
+        "precision": 0.8953881874609165,
+        "recall": 0.8919308357348703,
+        "f1-score": 0.8918507892705929,
+        "support": 694.0
+    }
+}
