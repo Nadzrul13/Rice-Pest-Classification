@@ -36,7 +36,7 @@ Eksperimen dilakukan dengan menerapkan tiga skenario fine tuning, yaitu **Featur
 
 Penelitian ini menggunakan **RP11 (Rice Pest 11)**, yaitu dataset yang diperkenalkan oleh **Ding et al. (2025)** sebagai subset dari **IP102** yang berfokus pada citra **hama padi fase dewasa (adult stage)**. Dataset ini dipublikasikan melalui Kaggle dan dirancang untuk mendukung penelitian klasifikasi hama tanaman padi.
 
-**📌 Dataset Information**
+**📌 Informasi Dataset**
 
 - **Dataset Name:** RP11 (Subset of IP102)
 - **Source:** Ding et al. (2025)
@@ -45,8 +45,7 @@ Penelitian ini menggunakan **RP11 (Rice Pest 11)**, yaitu dataset yang diperkena
 - **Total Images:** **4,559**
 - **Number of Classes:** **11 Rice Pest Categories**
 
-### 📊 Class Distribution
-
+### 📊 Distribusi Kelas
 | No | Pest Category | Description | Images |
 |:--:|---------------|-------------|-------:|
 | 1 | Curculionidae | Small beetles that damage rice leaves and roots during the early growth stage. | 824 |
@@ -206,7 +205,7 @@ Seluruh eksperimen dilakukan menggunakan konfigurasi pelatihan berikut:
 
 ---
 
-## 📊 Experimental Results
+## 📊 Hasil Eksperimen
 
 Seluruh skenario pelatihan dievaluasi menggunakan metrik **Accuracy**, **Precision**, **Recall**, dan **F1-score** untuk membandingkan performa **EfficientNet-B4** dan **Inception-V3**.
 
@@ -226,7 +225,7 @@ Hasil eksperimen menunjukkan bahwa peningkatan strategi *fine-tuning* secara umu
 
 Secara keseluruhan, **EfficientNet-B4** memberikan performa yang lebih baik dibandingkan **Inception-V3** pada hampir seluruh skenario pengujian, menunjukkan kemampuan yang lebih baik dalam mengekstraksi fitur diskriminatif untuk klasifikasi hama tanaman padi.
 
-### Performance Comparison
+### Perbandingan Performa
 
 | Training Scenario | Model | Accuracy | Precision | Recall | F1-Score |
 |-------------------|-----------------|:-------:|:--------:|:------:|:-------:|
