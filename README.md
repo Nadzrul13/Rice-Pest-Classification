@@ -239,8 +239,7 @@ Secara keseluruhan, **EfficientNet-B4** memberikan performa yang lebih baik diba
 | | EfficientNet-B4 | 83.86% | 81.73% | 81.60% | 81.41% |
 | **Partial Fine-Tuning + Without Augmentation** | Inception-V3 | 87.46% | 85.77% | 85.51% | 85.58% |
 | | EfficientNet-B4 | 88.61% | 86.96% | 87.39% | 86.90% |
-| |Proposed |
-| ** Full Fine-Tuning + Without Augmentation** | **Inception-V3** | **89.19%** | **88.84%** | **87.97%** | **88.19%** |
+| **Full Fine-Tuning + Without Augmentation** | **Inception-V3** | **89.19%** | **88.84%** | **87.97%** | **88.19%** |
 | | **EfficientNet-B4** | **92.36%** | **91.30%** | **90.55%** | **90.75%** |
 
 ---
