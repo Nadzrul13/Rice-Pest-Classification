@@ -249,3 +249,23 @@ Secara keseluruhan, **EfficientNet-B4** memberikan performa yang lebih baik diba
 Analisis kesalahan dilakukan untuk mengidentifikasi penyebab terjadinya prediksi yang keliru menggunakan pendekatan **Explainable Artificial Intelligence (XAI)** melalui metode **GradCAM++**. Metode ini memvisualisasikan area citra yang menjadi fokus perhatian model saat melakukan klasifikasi, sehingga membantu memahami alasan di balik keputusan yang dihasilkan.
 
 Pada skenario terbaik (**Full Fine-Tuning tanpa augmentasi**), **EfficientNet-B4** menghasilkan **53** prediksi yang salah, sedangkan **Inception-V3** menghasilkan **75** prediksi yang salah. Hasil ini menunjukkan bahwa EfficientNet-B4 mampu memberikan prediksi yang lebih akurat dibandingkan Inception-V3 pada dataset RP11.
+
+---
+
+## Panduan Instalasi
+
+Ikuti langkah-langkah berikut untuk menjalankan proyek ini pada lingkungan lokal.
+
+```bash
+# 1. Clone repository
+git clone https://github.com/Nadzrul13/Rice-Pest-Classification.git
+
+# 2. Masuk ke direktori project
+cd Rice-Pest-Classification
+
+# 3. Install seluruh dependency
+pip install -r requirements.txt
+
+# 4. Jalankan Jupyter Notebook
+jupyter notebook
+```
