@@ -269,3 +269,13 @@ pip install -r requirements.txt
 # 4. Jalankan Jupyter Notebook
 jupyter notebook
 ```
+
+---
+
+##  Author
+
+**Nadzrul Khair**
+
+- **Student ID (NIM):** 202210370311042
+- **Department:** Informatics
+- **Institution:** University of  Muhammadiyah Malang
