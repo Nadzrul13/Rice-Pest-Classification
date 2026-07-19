@@ -6,7 +6,7 @@ Eksperimen dilakukan dengan menerapkan tiga skenario fine tuning, yaitu **Featur
 
 ---
 
-## 🛠️ Tech Stack & Tools
+##  Tech Stack & Tools
 <p align="center">
 
 ![Status](https://img.shields.io/badge/Status-Completed-brightgreen?style=for-the-badge)
@@ -32,7 +32,7 @@ Eksperimen dilakukan dengan menerapkan tiga skenario fine tuning, yaitu **Featur
 
 ---
 
-## 📂 Dataset
+##  Dataset
 
 Penelitian ini menggunakan **RP11 (Rice Pest 11)**, yaitu dataset yang diperkenalkan oleh **Ding et al. (2025)** sebagai subset dari **IP102** yang berfokus pada citra **hama padi fase dewasa (adult stage)**. Dataset ini dipublikasikan melalui Kaggle dan dirancang untuk mendukung penelitian klasifikasi hama tanaman padi.
 
@@ -45,7 +45,7 @@ Penelitian ini menggunakan **RP11 (Rice Pest 11)**, yaitu dataset yang diperkena
 - **Total Images:** **4,559**
 - **Number of Classes:** **11 Rice Pest Categories**
 
-### 📊 Distribusi Kelas
+###  Distribusi Kelas
 | No | Pest Category | Description | Images |
 |:--:|---------------|-------------|-------:|
 | 1 | Curculionidae | Small beetles that damage rice leaves and roots during the early growth stage. | 824 |
@@ -63,7 +63,7 @@ Penelitian ini menggunakan **RP11 (Rice Pest 11)**, yaitu dataset yang diperkena
 
 ---
 
-## ⚙️ Alur Penelitian
+##  Alur Penelitian
 
 Penelitian ini menerapkan alur kerja (*End-to-End Deep Learning Pipeline*) yang sistematis untuk memastikan setiap tahapan, mulai dari persiapan data, pelatihan model, evaluasi kinerja, hingga interpretasi hasil menggunakan *Explainable Artificial Intelligence (XAI)*, dilakukan secara terstruktur.
 
@@ -159,7 +159,7 @@ graph TD
 ```
 ---
 
-## 🧠 Arsitektur Model
+##  Arsitektur Model
 
 Penelitian ini membandingkan dua arsitektur *Convolutional Neural Network (CNN)* yang telah dipra-latih (*pre-trained*) pada dataset **ImageNet** dan diimplementasikan menggunakan pendekatan *transfer learning*.
 
@@ -170,7 +170,7 @@ Penelitian ini membandingkan dua arsitektur *Convolutional Neural Network (CNN)*
 
 ---
 
-## 🧪 Skenario Pengujian
+##  Skenario Pengujian
 
 Penelitian ini mengevaluasi dua arsitektur CNN, **EfficientNet-B4** dan **Inception-V3**, menggunakan enam skenario eksperimen yang merupakan kombinasi dari tiga strategi *transfer learning* dan dua konfigurasi pelatihan (dengan dan tanpa augmentasi).
 
@@ -205,19 +205,19 @@ Seluruh eksperimen dilakukan menggunakan konfigurasi pelatihan berikut:
 
 ---
 
-## 📊 Hasil Eksperimen
+##  Hasil Eksperimen
 
 Seluruh skenario pelatihan dievaluasi menggunakan metrik **Accuracy**, **Precision**, **Recall**, dan **F1-score** untuk membandingkan performa **EfficientNet-B4** dan **Inception-V3**.
 
 Hasil eksperimen menunjukkan bahwa peningkatan strategi *fine-tuning* secara umum memberikan peningkatan performa pada kedua arsitektur dibandingkan pendekatan *Feature Extraction*. Dari enam skenario yang diuji, **Full Fine-Tuning tanpa augmentasi** menghasilkan performa terbaik pada kedua model.
 
-- 🏆 **EfficientNet-B4** mencapai performa terbaik pada skenario **Full Fine-Tuning tanpa augmentasi**, dengan:
+-  **EfficientNet-B4** mencapai performa terbaik pada skenario **Full Fine-Tuning tanpa augmentasi**, dengan:
   - Accuracy : **92.36%**
   - Precision : **91.30%**
   - Recall : **90.55%**
   - F1-score : **90.75%**
 
-- 🏆 **Inception-V3** juga memperoleh performa terbaik pada skenario **Full Fine-Tuning tanpa augmentasi**, dengan:
+-  **Inception-V3** juga memperoleh performa terbaik pada skenario **Full Fine-Tuning tanpa augmentasi**, dengan:
   - Accuracy : **89.19%**
   - Precision : **88.84%**
   - Recall : **87.97%**
@@ -239,5 +239,14 @@ Secara keseluruhan, **EfficientNet-B4** memberikan performa yang lebih baik diba
 | | EfficientNet-B4 | 83.86% | 81.73% | 81.60% | 81.41% |
 | **Partial Fine-Tuning + Without Augmentation** | Inception-V3 | 87.46% | 85.77% | 85.51% | 85.58% |
 | | EfficientNet-B4 | 88.61% | 86.96% | 87.39% | 86.90% |
-| **🏆 Full Fine-Tuning + Without Augmentation** | **Inception-V3** | **89.19%** | **88.84%** | **87.97%** | **88.19%** |
+| |Proposed |
+| ** Full Fine-Tuning + Without Augmentation** | **Inception-V3** | **89.19%** | **88.84%** | **87.97%** | **88.19%** |
 | | **EfficientNet-B4** | **92.36%** | **91.30%** | **90.55%** | **90.75%** |
+
+---
+
+##  Analisis Eror (GradCAM++)
+
+Analisis kesalahan dilakukan untuk mengidentifikasi penyebab terjadinya prediksi yang keliru menggunakan pendekatan **Explainable Artificial Intelligence (XAI)** melalui metode **GradCAM++**. Metode ini memvisualisasikan area citra yang menjadi fokus perhatian model saat melakukan klasifikasi, sehingga membantu memahami alasan di balik keputusan yang dihasilkan.
+
+Pada skenario terbaik (**Full Fine-Tuning tanpa augmentasi**), **EfficientNet-B4** menghasilkan **53** prediksi yang salah, sedangkan **Inception-V3** menghasilkan **75** prediksi yang salah. Hasil ini menunjukkan bahwa EfficientNet-B4 mampu memberikan prediksi yang lebih akurat dibandingkan Inception-V3 pada dataset RP11.
